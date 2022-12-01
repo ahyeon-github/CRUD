@@ -31,9 +31,9 @@ public class PostsRepositoryTest {
 
     @Test
     public void 게시글저장_불러오기() {
-        // given
-        String title = "테스트 게시글";
-        String content = "테스트 본문";
+
+        String title = "게시판 기능 게시글 제목 ";
+        String content = "게시판 기능 게시글 본문 내용";
 
         postsRepository.save(Posts.builder()
                 .title(title)
@@ -41,7 +41,7 @@ public class PostsRepositoryTest {
                 .author("ahyeon31@sookmyung.ac.kr")
                 .build());
 
-        // when
+
         List<Posts> postsList = postsRepository.findAll();
 
 
@@ -53,7 +53,7 @@ public class PostsRepositoryTest {
     @Test
     public void BaseTimeEntity_등록() {
 
-        LocalDateTime now = LocalDateTime.of(2022, 11, 13, 0, 0, 0);
+        LocalDateTime now = LocalDateTime.of(2022, 12, 01, 0, 0, 0);
         postsRepository.save(Posts.builder()
                 .title("title")
                 .content("content")
